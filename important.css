@@ -1,0 +1,27 @@
+important
+
+<style>
+        .infoForm{
+            
+            padding:10px;
+            margin-top:10px;
+        }
+    
+        .page-content {
+            width: 800px;
+            /* text-align:center; */
+            text-align: justify;
+            margin-top:20px;
+
+        }
+
+        .masthead {
+            height: 2vh;
+            min-height: 200px;
+            background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+    </style>

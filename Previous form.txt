@@ -1,0 +1,91 @@
+Previous form 
+
+
+<form id="regForm" action="/quote-requested.php" method="POST">
+  <h2>Get Instant Quote</h2>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">
+    <p>Zip Code:<input placeholder="Zip Code" value="<?php echo $zip_code; ?>" oninput="this.className = ''" name="zip_code"></p>
+    <div class="row">
+    <div class="col-md-6"><p>First Name:<input placeholder="First Name..." oninput="this.className = ''" name="fname"></p></div>
+    <div class="col-md-6"><p>Last Name:<input placeholder="Last Name..." oninput="this.className = ''" name="lname"></p></div>
+    </div>
+    <p>E-mail Address:<input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+  </div>
+  <div class="tab">
+      <p>Phone Number:<input placeholder="Phone Number..." oninput="this.className = ''" name="phone"></p>
+    <p>Gender:
+        <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+        </p>
+        <!--<p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>-->
+        <label class="mt-2">Date Of Birth</label>
+        <p id="gender">
+            <?php
+    $selected_day = "Day"; //current day
+
+    echo '<select id="day" class="dateInput" name="day">'."\n";
+    echo '<option value="day">Day</option>'."\n";
+    for ($i_day = 1; $i_day <= 31; $i_day++) { 
+        $selected = ($selected_day == $i_day ? ' selected' : '');
+        echo '<option value="'.$i_day.'"'.$selected.'>'.$i_day.'</option>'."\n";
+    }
+    echo '</select>'."\n";
+?>
+<!--For Month-->
+
+<?php
+    $selected_month = "Month"; //current month
+
+    echo '<select id="month" class="dateInput" name="month">'."\n";
+    echo '<option value="month">Month</option>'."\n";
+    for ($i_month = 1; $i_month <= 12; $i_month++) { 
+        $selected = ($selected_month == $i_month ? ' selected' : '');
+        echo '<option value="'.$i_month.'"'.$selected.'>'. date('F', mktime(0,0,0,$i_month)).'</option>'."\n";
+    }
+    echo '</select>'."\n";
+?>
+<?php 
+    $year_start  = 1940;
+    $year_end = date('Y'); // current Year
+    $user_selected_year = date('y'); // user date of birth year
+
+    echo '<select id="year" class="dateInput" name="year">'."\n";
+    echo '<option value="year">Year</option>'."\n";
+    for ($i_year = $year_start; $i_year <= $year_end; $i_year++) {
+        $selected = ($user_selected_year == $i_year ? ' selected' : '');
+        echo '<option value="'.$i_year.'"'.$selected.'>'.$i_year.'</option>'."\n";
+    }
+    echo '</select>'."\n";
+?>
+
+        </p>
+        
+  </div>
+  
+  <div class="tab">
+        <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
+       <div class="form-group form-check">
+
+<label><input type="checkbox" id="leadid_tcpa_disclosure" required/>By checking this box and submitting this form, I agree to the Terms and Conditions and Privacy Policy of affordablemedigap.com, their agents and <a href="https://www.medicaresolutionsjoy.com/marketingpartners.html">MarketingPartners</a> to contact me about Medicare insurance and other non-insurance offers by telephone calls and text messages to the number I provided above.
+I agree to receive telemarketing calls and pre-recorded messages via an auto dialed phone system, even if my telephone number is a mobile number that is currently listed on any state, federal or corporate Do Not Call list. I understand that my consent is not a condition of purchase of any goods or services and that I may revoke my consent at any time. I understand that standard message and data rates may apply.</label>
+  </div>
+   
+    
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span style="background-color:#94c045;" class="step"></span>
+    <span style="background-color:#94c045;" class="step"></span>
+    <span style="background-color:#94c045;" class="step"></span>
+    
+  </div>
+</form>

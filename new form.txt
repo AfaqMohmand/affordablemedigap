@@ -1,0 +1,28 @@
+new form
+
+
+<div class="tab">
+      <p>Phone Number:<input placeholder="Phone Number..." oninput="this.className = ''" name="phone"></p>
+    <p>Gender:
+        <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+        </p>
+        <!--<p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>-->
+        <label class="mt-2">Date Of Birth</label>
+        
+        
+  </div>
+
+
+  <div class="tab">
+        <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
+       <div class="form-group form-check">
+
+<label><input type="checkbox" id="leadid_tcpa_disclosure" required/>By checking this box and submitting this form, I agree to the Terms and Conditions and Privacy Policy of affordablemedigap.com, their agents and <a href="https://www.medicaresolutionsjoy.com/marketingpartners.html">MarketingPartners</a> to contact me about Medicare insurance and other non-insurance offers by telephone calls and text messages to the number I provided above.
+I agree to receive telemarketing calls and pre-recorded messages via an auto dialed phone system, even if my telephone number is a mobile number that is currently listed on any state, federal or corporate Do Not Call list. I understand that my consent is not a condition of purchase of any goods or services and that I may revoke my consent at any time. I understand that standard message and data rates may apply.</label>
+  </div>
+   
+    
+  </div>
